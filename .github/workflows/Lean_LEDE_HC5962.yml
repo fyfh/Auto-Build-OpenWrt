@@ -12,16 +12,11 @@ name: Build Lean_LEDE_HC5962
 
 on:
   repository_dispatch:
-  workflow_dispatch:
-    inputs:
-      ssh:
-        description: 'SSH connection to Actions'
-        required: false
-        default: 'false'
+  release:
+    types: published
+
   schedule:
     - cron: 0 6 1/3 * *
-#  watch:
-#    types: started
   watch:
     types: started
 jobs:
