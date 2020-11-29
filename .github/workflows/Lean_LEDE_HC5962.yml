@@ -63,11 +63,14 @@ jobs:
       env:
         CONFIG_FILE: Lean_LEDE_HC5962.config
         DIY_P2_SH: diy-part2.sh
+        THEME_A: theme-a-lean.sh
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
+        chmod +x $THEME_A
         cd openwrt
+        ../$THEME_A
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: Download package
