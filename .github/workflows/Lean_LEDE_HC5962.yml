@@ -72,8 +72,8 @@ jobs:
         cd openwrt
         ../$THEME_A
         $GITHUB_WORKSPACE/$DIY_P2_SH
-    - name: Setup Debug Session
-      uses: P3TERX/debugger-action@main
+   # - name: Setup Debug Session
+    #  uses: P3TERX/debugger-action@main
     - name: Download package
       id: package
       run: |
